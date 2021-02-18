@@ -1,0 +1,58 @@
+/**********************************************************************
+ * Styles.css                                                         *
+ *                                                                    *
+ * This file is initially empty and you can add any additional styles *
+ * or modify any of the styles defined in BaseStyles.css              *
+ * This file will never be overwritten.                               *
+ *                                                                    *
+ * For example, if you want to override just the top padding for a    *
+ * menu, you can simply add the following lines:                      *
+ *                                                                    *
+ * .menus {                                                           *
+ * 	padding-top: 20px;                                            *
+ * 	}                                                             *
+ *                                                                    *
+ * This will keep all the other styles of the "menus" style as-is,    *
+ * but modify the top padding to be 20px.                             *
+ *                                                                    *
+ * You can also, add a new style by just specifying it.               *
+ *                                                                    *
+ * .menus {                                                           *
+ * 	padding-top: 20px;                                            *
+ * 	text-align: center;                                           *
+ * 	}                                                             *
+ * 	                                                              *
+ * In the above case, we added the text-align style.  This style was  *
+ * not specified in the original declaration of the menus style.      *
+ *                                                                    *
+ **********************************************************************/
+.tableCellValueNW { /* table cell field value text */
+	color: #000000;
+	font-family: 'Open Sans Condensed', Arial, Verdana, sans-serif;
+	font-size: 15px;
+	padding-bottom: 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 4px;
+	text-align: left;
+	vertical-align: top;
+  	border-bottom: 1px solid #dbdbdb;
+	white-space: nowrap;
+	}
+
+.tableCellValueGrid { /* table cell field value text */
+	color: #000000;
+	font-family: 'Open Sans Condensed', Arial, Verdana, sans-serif;
+	font-size: 15px;
+	padding-bottom: 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 4px;
+	text-align: left;
+	/*text-shadow: 1px 1px 1px #dddddd;*/
+	vertical-align: top;
+	border-bottom: 1px solid #dbdbdb;
+	}
+
+
+

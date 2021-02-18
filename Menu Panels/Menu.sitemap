@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+Each siteMapNode tag represents a menu item in the menu control. 
+The tags are case-sensitive and should contain the following case-sensitive attributes:
+  title: Text to be displayed for the menu item. Surround any part of the title to be retrieved from a RESX file with {}.
+  eg. title="{Menu:Add} Categories".
+	
+  desciption: Tool tip for the menu item. Surround any part of the title to be retrieved from a RESX file with {}.
+  eg. description="{Menu:Add} Categories".
+
+  url: The url value may be an empty string or may contain a unique value. The value should be one of the following types:
+      Absolute url: a complete path of the web page you want to display. 
+      eg: http://www.ironspeed.com
+      Relative url: url relative to application root. 
+      eg: ~/Categories/ShowCategoriesTablePage.aspx.
+      
+  imageUrl: The URL of the image to be displayed for each menu item.
+  eg. imageUrl="~/Images/MenuTopLevel.gif"
+
+  roles: A list of comma separated role ids defined as part of application's security (use role names as role ids
+  for Microsoft Active Directory and Microsoft AzMan Role management). To specify standard Iron Speed Designer roles, use:
+        Everyone: For all users.
+        NOT_ANONYMOUS: For signed in users only.
+        ANONYMOUS: For users who are not signed in.
+        NO_ACCESS: For none of the users.
+  The user should belong to one of the listed roles in order for the menu item to be displayed.
+	
+  order: (Please do not modify this attribute.) Specifies the order in which the elements are displayed. Changing the value 
+  of this attribute will not affect the order of the menu items on the display. They are used whenever a new menu item is 
+  inserted into the sitemap file to locate the position where the new menu item should be added.
+  -->
+<siteMap>
+  <siteMapNode>
+    <siteMapNode title="Home" description="Home" url="~/RepairOrders/Start.aspx" imageUrl="../Images/home-icon.png" roles="1;2;3" order="1" />
+    <siteMapNode title="Active Repairs" description="Customer Active Repairs" url="~/RepairOrders/Show-RepairOrders-Table-Customer.aspx" imageUrl="../Images/oem-icon.png" roles="5" order="2" />
+    <siteMapNode title="Active Repairs" description="Corp Active Repairs" url="~/RepairOrders/Show-RepairOrders-Table-Corp.aspx" imageUrl="../Images/oem-icon.png" roles="6" order="3" />
+    <siteMapNode title="Active Repairs" description="Cust Contact Active Repairs" url="~/RepairOrders/Show-RepairOrders-Table-CustomerContact.aspx" imageUrl="../Images/oem-icon.png" roles="4" order="4" />
+    <siteMapNode title="Repair History" description="Customer Repair History" url="~/RepairOrders/Show-RepairOrders-Table-Customer-History.aspx" imageUrl="../Images/Card-file-icon.png" roles="NO_ACCESS" order="5" />
+    <siteMapNode title="Repair History" description="Customer Contact Repair History" url="~/RepairOrders/Show-RepairOrders-Table-CustomerContact-History.aspx" imageUrl="../Images/Card-file-icon.png" roles="4;5" order="6" />
+    <siteMapNode title="Repair History" description="Corp Repair History" url="~/RepairOrders/Show-RepairOrders-Table-Corp-History.aspx" imageUrl="../Images/Card-file-icon.png" roles="6" order="7" />
+    <siteMapNode title="Facility Details" description="Customer Facility Details" url="~/Customers/Customer-NonEdit-Customers.aspx" imageUrl="../Images/contact-icon.png" roles="4" order="8" />
+    <siteMapNode title="Facility Details" description="Facility Edit" url="~/Customers/Customer-Edit-Customers.aspx" imageUrl="../Images/contact-icon.png" roles="5" order="9" />
+    <siteMapNode title="Contact Details" description="Corporate Contact Edit" url="~/corporate_contacts/Corp-Edit-Corporate-contacts.aspx" imageUrl="../Images/contact-icon.png" roles="6" order="10" />
+    <siteMapNode title="Health Care System Details" description="Corp Edit" url="~/corporate/Corp-Edit-Corporate.aspx" imageUrl="../Images/corp-icon.png" roles="6" order="11" />
+    <siteMapNode title="Contact Details" description="Contact Edit" url="~/CustomerContacts/Contact-Edit-CustomerContacts.aspx" imageUrl="../Images/contact-icon.png" roles="4;5" order="12" />
+    <siteMapNode title="Contract Budgets" description="Corp Contract" url="~/contract/Show-Contract-Table.aspx" imageUrl="../Images/Contract-icon.png" roles="NO_ACCESS" order="13" />
+    <siteMapNode title="Inventory" description="Customer Inventory" url="" imageUrl="../Images/inventory_icon.png" roles="4;5" order="14">
+      <siteMapNode title="Inventory Items" description="Cust Contact Inventory" url="~/site_inventory/Show-Site-inventory-Table-CustomerContact.aspx" imageUrl="" roles="4;5" order="1" />
+    </siteMapNode>
+    <siteMapNode title="OEM RO" description="Internal OEM Repair Orders" url="~/RepairOrders/Show-RepairOrders-Table.aspx?" imageUrl="../Images/oem-icon.png" roles="1;3" order="15" />
+    <siteMapNode title="OEM RO" description="Sales OEM Repair Orders" url="~/RepairOrders/Show-RepairOrders-Table-Sales.aspx" imageUrl="../Images/oem-icon.png" roles="2" order="16" />
+    <siteMapNode title="Bio RO" description="Internal Biomedical Repair Orders" url="~/RepairOrders/Bio-RepairOrders-Table.aspx" imageUrl="../Images/bio-icon.png" roles="1;3" order="17" />
+    <siteMapNode title="Bio RO" description="Sales Biomedical Repair Orders" url="~/RepairOrders/Bio-RepairOrders-Table-Sales.aspx" imageUrl="../Images/bio-icon.png" roles="2" order="18" />
+    <siteMapNode title="Metal RO" description="Internal Metal Repair Orders" url="~/RepairOrders/Metal-RepairOrders-Table.aspx" imageUrl="../Images/metal-icon.png" roles="1;3" order="19" />
+    <siteMapNode title="Metal RO" description="Sales Metal Repair Orders" url="~/RepairOrders/Metal-RepairOrders-Table-Sales.aspx" imageUrl="../Images/metal-icon.png" roles="2" order="20" />
+    <siteMapNode title="Repair History" description="OEM Repair History" url="~/RepairOrders/History-Show-RepairOrders-Table.aspx" imageUrl="../Images/history-icon.png" roles="NO_ACCESS" order="21" />
+    <siteMapNode title="Repair History" description="{Menu:Show} Repairorder History" url="~/repairorder_history/Show-Repairorder-history-Table.aspx" imageUrl="../Images/Card-file-icon.png" roles="1;3" order="22" />
+    <siteMapNode title="Repair History" description="Sales Repair History" url="~/RepairOrders/History-Show-RepairOrders-Table-Sales.aspx" imageUrl="../Images/history-icon.png" roles="2" order="23" />
+    <siteMapNode title="Requests" description="Repair Order Request (Customer)" url="" imageUrl="../Images/Bullhorn-icon.png" roles="4;5" order="24">
+      <siteMapNode title="Equipment Pickup Requests" description="{Menu:Show} Equipment Pickup Request" url="~/equipment_pickup_request/Show-Equipment-pickup-request-Table.aspx" imageUrl="" roles="3" order="1" />
+      <siteMapNode title="Repair Order Request" description="Repair Order Request" url="~/repair_order_request/Add-Repair-order-request.aspx" imageUrl="" roles="4" order="2" />
+      <siteMapNode title="Repair Order Request" description="Repair Order Request" url="~/repair_order_request/Add-Repair-order-request-Corp.aspx" imageUrl="" roles="6" order="3" />
+      <siteMapNode title="Repair Request History" description="Repair Request History" url="~/repair_order_request/Show-Repair-order-request-Table-Customer.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="Pickup Requests" description="Pickup Requests" url="~/pickup_request/Show-Pickup-request-Customer-Table.aspx" imageUrl="" roles="1;2;3" order="5" />
+      <siteMapNode title="Loaner Request" description="" url="~/loaner_request/Customer-Loaner-request.aspx" imageUrl="" roles="" order="6" />
+    </siteMapNode>
+    <siteMapNode title="Repair Order Request" description="Repair Order Request (Corp)" url="" imageUrl="../Images/Bullhorn-icon.png" roles="6" order="25">
+      <siteMapNode title="Add Repair Order Request" description="Add Repair Order Request" url="~/repair_order_request/Corp-Add-Repair-order-request.aspx" imageUrl="" roles="6" order="1" />
+      <siteMapNode title="Repair Request History" description="Repair Request History" url="~/repair_order_request/Show-Repair-order-request-Table-Corp.aspx" imageUrl="" roles="" order="2" />
+    </siteMapNode>
+    <siteMapNode title="Requests" description="Repair Order Requests (Admin)" url="~/repair_order_request/Show-Repair-order-request-Table.aspx?" imageUrl="../Images/Bullhorn-icon.png" roles="1;3" order="26">
+      <siteMapNode title="Repair Order Requests" description="Repair Order Requests" url="~/repair_order_request/Show-Repair-order-request-Table.aspx" imageUrl="" roles="3" order="1" />
+      <siteMapNode title="Pickup Requests" description="Pickup Requests" url="~/pickup_request/Show-Pickup-request-Table.aspx" imageUrl="" roles="1;3" order="2" />
+      <siteMapNode title="Loaner/Demo Requests" description="" url="~/loaner_request/Show-Loaner-request-Table.aspx" imageUrl="" roles="" order="3" />
+    </siteMapNode>
+    <siteMapNode title="RO Requests" description="Repair Order Requests (Sales)" url="" imageUrl="../Images/Bullhorn-icon.png" roles="2" order="27">
+      <siteMapNode title="Repair Order Requests" description="Repair Order Requests" url="~/repair_order_request/Show-Repair-order-request-Table-Sales.aspx" imageUrl="" roles="" order="1" />
+    </siteMapNode>
+    <siteMapNode title="CRM" description="CRM" url="" imageUrl="../Images/contact-icon.png" roles="1;2;3" order="28">
+      <siteMapNode title="Show Healtcare System" description="Show Healtcare System" url="~/corporate/Show-Corporate-Table.aspx" imageUrl="" roles="2;3" order="1" />
+      <siteMapNode title="Health System Contacts" description="" url="~/corporate_contacts/Show-Corporate-contacts-Table.aspx" imageUrl="" roles="2;3" order="2" />
+      <siteMapNode title="{Menu:Show} Facilities" description="{Menu:Show} Facilities" url="~/Customers/Show-Customers-Table.aspx?Customer_Type=1" imageUrl="" roles="1;3" order="3" />
+      <siteMapNode title="{Menu:Show} Facilities" description="Sales {Menu:Show} Facilities" url="~/Customers/Sales-Show-Customers-Table.aspx" imageUrl="" roles="2" order="4" />
+      <siteMapNode title="Facility Contacts" description="" url="~/CustomerContacts/Show-CustomerContacts-Table.aspx" imageUrl="" roles="2;3" order="5" />
+      <siteMapNode title="{Menu:Show} Leads" description="{Menu:Show} Leads" url="~/Customers/Show-Leads-Table.aspx" imageUrl="" roles="2;3" order="6" />
+      <siteMapNode title="{Menu:Show} Prospects" description="{Menu:Show} Prospects" url="~/Customers/Show-Prospect-Table.aspx" imageUrl="" roles="2;3" order="7" />
+      <siteMapNode title="Site Inventory Contracts" description="" url="~/site_inventory_contract/Show-Site-inventory-contract-Table.aspx" imageUrl="" roles="3" order="8" />
+      <siteMapNode title="Contact List Export" description="" url="~/vw_contactlist_export/Show-Vw-contactlist-export-Table.aspx" imageUrl="" roles="2;3" order="9" />
+      <siteMapNode title="Opportunities" description="Opportunities" url="~/opportunity/Show-Opportunity-Table.aspx?" imageUrl="../Images/Money-icon.png" roles="2;3" order="10">
+        <siteMapNode title="{Menu:Add} Opportunity" description="{Menu:Add} Opportunity" url="~/opportunity/Add-Opportunity.aspx" imageUrl="" roles="" order="1" />
+        <siteMapNode title="{Menu:Show}  Opportunities" description="{Menu:Show} Opportunities" url="~/opportunity/Show-Opportunity-Table.aspx" imageUrl="" roles="" order="2" />
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode title="Projects" description="Project" url="~/project/Show-Project-Table.aspx?" imageUrl="../Images/project-icon.png" roles="1;2;3" order="29">
+      <siteMapNode title="{Menu:Show} Projects" description="{Menu:Show} Project" url="~/project/Show-Project-Table.aspx" imageUrl="" roles="" order="1" />
+    </siteMapNode>
+    <siteMapNode title="Inventory" description="Admin Inventory" url="" imageUrl="../Images/inventory-icon.png" roles="1;2;3" order="30">
+      <siteMapNode title="Active Inventory List" description="{Menu:Show} Equipment Inventory" url="~/vw_equipment_inventory/Show-Vw-equipment-inventory-Table.aspx" imageUrl="" roles="1;3" order="1" />
+      <siteMapNode title="Active Inventory List (NF)" description="{Menu:Show} Equipment Inventory" url="~/vw_equipment_inventory/Copy-of-Show-Vw-equipment-inventory-Table.aspx" imageUrl="" roles="1;3" order="2" />
+      <siteMapNode title="Sold Inventory" description="" url="~/equipment_inventory/Show-Sold-Equipment-inventory-Table.aspx" imageUrl="" roles="1;3" order="3" />
+      <siteMapNode title="Post Inventory" description="" url="~/vw_equipment_inventory/PostInventory-Show-Vw-equipment-inventory-Table.aspx" imageUrl="" roles="1;3" order="4" />
+      <siteMapNode title="Disposed Inventory" description="" url="~/equipment_inventory/Show-Disposed-Equipment-inventory-Table.aspx" imageUrl="" roles="1;3" order="5" />
+      <siteMapNode title="Old Inventory" description="" url="~/equipment_inventory/Show-Old-Equipment-inventory-Table.aspx" imageUrl="" roles="1;3" order="6" />
+      <siteMapNode title="Add Inventory" description="" url="~/equipment_inventory/Add-Equipment-inventory.aspx" imageUrl="" roles="1;2;3" order="7" />
+      <siteMapNode title="Inventory List" description="Facility Inventory List" url="~/equipment_inventory/Facility-Show-Equipment-inventory-Table.aspx" imageUrl="" roles="4;5;6" order="8" />
+      <siteMapNode title="Inventory Search" description="Inventory Search" url="~/equipment_inventory/Search-Equipment-inventory.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="Equipment Pickup Request" description="{Menu:Add} Equipment Pickup Request" url="~/equipment_pickup_request/Add-Equipment-pickup-request.aspx" imageUrl="" roles="4;5" order="10">
+        <siteMapNode title="{Menu:Show} Equipment Pickup Request 1" description="{Menu:Show} Equipment Pickup Request 1" url="~/equipment_pickup_request/Show-Equipment-pickup-request-Table1.aspx" imageUrl="" roles="" order="1" />
+      </siteMapNode>
+      <siteMapNode title="Active Loaners" description="" url="~/equipment_inventory/Active-Loaner-Equipment.aspx" imageUrl="" roles="1;3" order="11" />
+      <siteMapNode title="Loaner Inventory" description="Loaner Inventory" url="~/equipment_inventory/Loaner-Show-Equipment-inventory-Table.aspx" imageUrl="" roles="1;3" order="12" />
+      <siteMapNode title="Inventory List" description="OLD LIST" url="~/equipment_inventory/Show-Equipment-inventory-Table.aspx" imageUrl="" roles="NO_ACCESS" order="13" />
+      <siteMapNode title="Equipment Inventory Batch" description="Equipment Inventory Batch" url="~/equipment_inventory_batch/Show-Equipment-inventory-batch-Table.aspx?" imageUrl="" roles="" order="14">
+        <siteMapNode title="{Menu:Add} Equipment Inventory Batch" description="{Menu:Add} Equipment Inventory Batch" url="~/equipment_inventory_batch/Add-Equipment-inventory-batch.aspx" imageUrl="" roles="" order="1" />
+        <siteMapNode title="Active Equipment Inventory Batches" description="{Menu:Show} Equipment Inventory Batch" url="~/equipment_inventory_batch/Show-Equipment-inventory-batch-Table.aspx" imageUrl="" roles="" order="2" />
+        <siteMapNode title="Completed Equipment Inventory Batches" description="Completed Equipment Inventory Batches" url="~/equipment_inventory_batch/Show-Equipment-inventory-batch-Table-History.aspx" imageUrl="" roles="" order="3" />
+      </siteMapNode>
+      <siteMapNode title="DotMed Listing" description="{Menu:Edit} VW Dotmed" url="~/vw_dotmed/Edit-Vw-dotmed-Table.aspx" imageUrl="" roles="" order="15" />
+    </siteMapNode>
+    <siteMapNode title="Ticketing" description="Ticketing" url="~/resource_sch_ticket/Show-Resource-sch-ticket-Table.aspx" imageUrl="../Images/ticketing-icon.png" roles="3" order="31" />
+    <siteMapNode title="Ticketing" description="Ticketing" url="~/resource_sch_ticket/Show-My-Resource-sch-ticket-Table.aspx" imageUrl="../Images/ticketing-icon.png" roles="1" order="32" />
+    <siteMapNode title="Procurement" description="Procurement Request" url="~/procurement_request/Internal-Show-Procurement-request-Table.aspx?" imageUrl="../Images/procurement-icon.png" roles="3" order="33">
+      <siteMapNode title="Procurement Requests" description="{Menu:Show} Procurement Request" url="~/procurement_request/Internal-Show-Procurement-request-Table.aspx" imageUrl="" roles="" order="1" />
+    </siteMapNode>
+    <siteMapNode title="Procurement" description="Procurement Request" url="~/procurement_request/Show-Procurement-request-Table.aspx?" imageUrl="../Images/procurement-icon.png" roles="NO_ACCESS" order="34">
+      <siteMapNode title="Procurement Requests" description="{Menu:Show} Procurement Request" url="~/procurement_request/Show-Procurement-request-Table.aspx" imageUrl="" roles="" order="1" />
+    </siteMapNode>
+    <siteMapNode title="My Profile" description="" url="" imageUrl="../Images/profileicon.png" roles="1;2;3" order="35">
+      <siteMapNode title="Task Schedule" description="{Menu:Show} Resource Schedule Week" url="~/vw_resource_schedule_week/Show-Vw-resource-schedule-week-Table.aspx" imageUrl="" roles="" order="1" />
+      <siteMapNode title="Timesheet" description="Timesheet" url="~/resource_sch_time/Edit-Resource-CurrentWeek-Table.aspx" imageUrl="" roles="" order="2" />
+      <siteMapNode title="My Details" description="" url="~/Technicians/MyProfile-Edit-Technicians.aspx" imageUrl="" roles="" order="3" />
+    </siteMapNode>
+    <siteMapNode title="Administration" description="Administration" url="" imageUrl="../Images/admin-icon.png" roles="1;2;3" order="36">
+      <siteMapNode title="Back Office" description="Back Office" url="" imageUrl="" roles="1;3" order="1">
+        <siteMapNode title="Approval Methods" description="Approval Methods" url="~/ApprovalMethods/Show-ApprovalMethods-Table.aspx?" imageUrl="" roles="3" order="1" />
+        <siteMapNode title="Categories" description="Category" url="~/categories/Show-Categories-Table.aspx" imageUrl="" roles="3" order="2" />
+        <siteMapNode title="Conditions" description="Conditions" url="~/Conditions/Show-Conditions-Table.aspx?" imageUrl="" roles="3" order="3" />
+        <siteMapNode title="Custom Notification" description="Custom Notification" url="~/custom_notification/Show-Custom-notification-Table.aspx" imageUrl="" roles="3" order="4" />
+        <siteMapNode title="Fault Codes" description="Fault Codes" url="~/FaultCodes/Show-FaultCodes-Table.aspx?" imageUrl="" roles="3" order="5" />
+        <siteMapNode title="Inventory Interval" description="{Menu:Show} Site Inventory Interval" url="~/site_inventory_interval/Show-Site-inventory-interval-Table.aspx" imageUrl="" roles="3" order="6" />
+        <siteMapNode title="Lead Source" description="Lead Source" url="~/lead_source/Show-Lead-source-Table.aspx?" imageUrl="" roles="3" order="7" />
+        <siteMapNode title="Makes Models" description="Makes Models" url="~/MakesModels/Show-MakesModels-Table.aspx?" imageUrl="" roles="" order="8" />
+        <siteMapNode title="Payment Method" description="Payment Method" url="~/payment_method/Show-Payment-method-Table.aspx?" imageUrl="" roles="3" order="9" />
+        <siteMapNode title="Pickup Request Status" description="Pickup Request Status" url="~/pickup_request_status/Show-Pickup-request-status-Table.aspx?" imageUrl="" roles="3" order="10" />
+        <siteMapNode title="Pickup Request Type" description="Pickup Request Type" url="~/pickup_request_type/Show-Pickup-request-type-Table.aspx?" imageUrl="" roles="3" order="11" />
+        <siteMapNode title="Repair Parts" description="Repair Parts" url="~/Inventory/Show-Inventory-Table.aspx?" imageUrl="" roles="3" order="12">
+          <siteMapNode title="{Menu:Show} Repair Inventory" description="{Menu:Show} Inventory" url="~/Inventory/Show-Inventory-Table.aspx" imageUrl="" roles="" order="1" />
+          <siteMapNode title="{Menu:Add} Inventory" description="{Menu:Add} Inventory" url="~/Inventory/Add-Inventory.aspx" imageUrl="" roles="" order="2" />
+        </siteMapNode>
+        <siteMapNode title="Service Codes" description="Service Codes" url="~/ServiceCodes/Show-ServiceCodes-Table.aspx?" imageUrl="" roles="3" order="13" />
+        <siteMapNode title="Shipping" description="Shipping" url="~/Shipping/Show-Shipping-Table.aspx?" imageUrl="" roles="3" order="14" />
+        <siteMapNode title="Stage" description="Stage" url="~/stage/Show-Stage-Table.aspx?" imageUrl="" roles="3" order="15" />
+        <siteMapNode title="Statuses" description="Statuses" url="~/Statuses/Show-Statuses-Table.aspx?" imageUrl="" roles="3" order="16" />
+        <siteMapNode title="Teams" description="{Menu:Show} OEM Team" url="~/oem_team/Show-Oem-team-Table.aspx" imageUrl="" roles="3" order="17" />
+        <siteMapNode title="Technician Role" description="Technician Role" url="~/technician_role/Show-Technician-role-Table.aspx?" imageUrl="" roles="3" order="18" />
+        <siteMapNode title="Territory" description="Territory" url="~/territory/Show-Territory-Table.aspx?" imageUrl="" roles="3" order="19" />
+      </siteMapNode>
+      <siteMapNode title="Configuration" description="Configuration" url="~/configuration/Show-Configuration-Table.aspx?" imageUrl="" roles="" order="2">
+        <siteMapNode title="{Menu:Show} Configuration" description="{Menu:Show} Configuration" url="~/configuration/Show-Configuration-Table.aspx" imageUrl="" roles="" order="1" />
+      </siteMapNode>
+      <siteMapNode title="Contractors" description="Contractor" url="~/contractor/Show-Contractor-Table.aspx?" imageUrl="" roles="3" order="3">
+        <siteMapNode title="{Menu:Show} Contractors" description="{Menu:Show} Contractor" url="~/contractor/Show-Contractor-Table.aspx" imageUrl="" roles="" order="1" />
+        <siteMapNode title="Contractor Skills" description="Contractor Skills" url="~/contractor_skills/Show-Contractor-skills-Table.aspx?" imageUrl="" roles="" order="2">
+          <siteMapNode title="{Menu:Show} Contractor Skills" description="{Menu:Show} Contractor Skills" url="~/contractor_skills/Show-Contractor-skills-Table.aspx" imageUrl="" roles="" order="1" />
+          <siteMapNode title="{Menu:Add} Contractor Skills" description="{Menu:Add} Contractor Skills" url="~/contractor_skills/Add-Contractor-skills.aspx" imageUrl="" roles="" order="2" />
+        </siteMapNode>
+        <siteMapNode title="Contractor Skills View" description="" url="~/vw_contractor_skills/Show-Vw-contractor-skills-Table.aspx" imageUrl="" roles="" order="3" />
+      </siteMapNode>
+      <siteMapNode title="Facilities" description="Facilities" url="" imageUrl="" roles="3" order="4">
+        <siteMapNode title="Facility Consolidation" description="Facility Consolidation" url="~/master_customer_ref/Show-Master-customer-ref-Table.aspx?" imageUrl="" roles="" order="1">
+          <siteMapNode title="Consolidate Facility" description="Consolidate Facility" url="~/master_customer_ref/Add-Master-customer-ref.aspx" imageUrl="" roles="" order="1" />
+          <siteMapNode title="{Menu:Show} Facility Consolidation Log" description="{Menu:Show} Facility Consolidation Log" url="~/master_customer_ref/Show-Master-customer-ref-Table.aspx" imageUrl="" roles="" order="2" />
+        </siteMapNode>
+        <siteMapNode title="{Menu:Edit} Facilities" description="{Menu:Edit} Facilities" url="~/Customers/Edit-Customers-Table.aspx" imageUrl="" roles="" order="2" />
+      </siteMapNode>
+      <siteMapNode title="Inventory" description="Inventory" url="" imageUrl="" roles="1;3" order="5">
+        <siteMapNode title="Ad Category" description="{Menu:Show} Equipment Inventory Advertisement Category" url="~/equipment_inventory_ad_category/Show-Equipment-inventory-ad-category-Table.aspx" imageUrl="" roles="3" order="1" />
+        <siteMapNode title="Dispositions" description="Equipment Inventory Disposition" url="~/equipment_inventory_disposition/Show-Equipment-inventory-disposition-Table.aspx" imageUrl="" roles="3" order="2" />
+        <siteMapNode title="Equipment Batch Status" description="Equipment Batch Status" url="~/equipment_batch_status/Show-Equipment-batch-status-Table.aspx?" imageUrl="" roles="3" order="3">
+          <siteMapNode title="{Menu:Add} Equipment Batch Status" description="{Menu:Add} Equipment Batch Status" url="~/equipment_batch_status/Add-Equipment-batch-status.aspx" imageUrl="" roles="" order="1" />
+          <siteMapNode title="{Menu:Show} Equipment Batch Status" description="{Menu:Show} Equipment Batch Status" url="~/equipment_batch_status/Show-Equipment-batch-status-Table.aspx" imageUrl="" roles="" order="2" />
+        </siteMapNode>
+        <siteMapNode title="Sale Methods" description="Sale Method" url="~/equipment_inventory_sale_method/Show-Equipment-inventory-sale-method-Table.aspx" imageUrl="" roles="3" order="4" />
+        <siteMapNode title="Warehouses" description="{Menu:Show} Warehouse" url="~/warehouse/Show-Warehouse-Table.aspx" imageUrl="" roles="1;3" order="5" />
+        <siteMapNode title="Warehouse Locations" description="{Menu:Show} Warehouse Location" url="~/warehouse_location/Show-Warehouse-location-Table.aspx" imageUrl="" roles="1;3" order="6" />
+      </siteMapNode>
+      <siteMapNode title="Loaners" description="Loaners" url="" imageUrl="" roles="" order="6">
+        <siteMapNode title="Loaner Statuses" description="Loaner Status" url="~/loaner_status/Show-Loaner-status-Table.aspx?" imageUrl="" roles="3" order="1" />
+        <siteMapNode title="Loaner Type" description="Loaner Type" url="~/loaner_type/Show-Loaner-type-Table.aspx?" imageUrl="" roles="3" order="2" />
+        <siteMapNode title="Loaner Inventory" description="Loaner Inventory" url="~/loaner_inventory/Show-Loaner-inventory-Table.aspx?" imageUrl="" roles="" order="3" />
+      </siteMapNode>
+      <siteMapNode title="Project" description="Project" url="" imageUrl="" roles="3" order="7">
+        <siteMapNode title="Project Status" description="" url="~/project_status/Show-Project-status-Table.aspx" imageUrl="" roles="" order="1" />
+        <siteMapNode title="Project Types" description="{Menu:Show} Project Type" url="~/project_type/Show-Project-type-Table.aspx" imageUrl="" roles="" order="2" />
+        <siteMapNode title="Project Roles" description="Project Roles" url="~/project_role/Show-Project-role-Table.aspx?" imageUrl="" roles="" order="3" />
+      </siteMapNode>
+      <siteMapNode title="Procurement" description="Procurement" url="" imageUrl="" roles="3" order="8">
+        <siteMapNode title="Procurement Manufacturer" description="{Menu:Show} Procurement Manufacturer" url="~/procurement_manufacturer/Show-Procurement-manufacturer-Table.aspx" imageUrl="" roles="" order="1" />
+        <siteMapNode title="Request Status" description="{Menu:Show} Procurement Request Status" url="~/procurement_request_status/Show-Procurement-request-status-Table.aspx" imageUrl="" roles="" order="2" />
+        <siteMapNode title="Workflow Status" description="{Menu:Show} Procurement Status" url="~/procurement_status/Show-Procurement-status-Table.aspx" imageUrl="" roles="" order="3" />
+      </siteMapNode>
+      <siteMapNode title="Refurb" description="Refurb" url="" imageUrl="" roles="1;3" order="9">
+        <siteMapNode title="Refubr Parts" description="Refurb Parts" url="~/refurb_parts/Show-Refurb-parts-Table.aspx" imageUrl="" roles="" order="1" />
+        <siteMapNode title="{Menu:Show} Refurb Part Vendor" description="{Menu:Show} Refurb Part Vendor" url="~/Vendors/Show-Vendors-Refurb-Table.aspx" imageUrl="" roles="" order="2" />
+      </siteMapNode>
+      <siteMapNode title="Reports" description="Reports" url="~/RepairOrders/Corp-Reports.aspx" imageUrl="" roles="3" order="10" />
+      <siteMapNode title="Sales Territories" description="Sales Territories" url="~/SalesTerritories/Show-SalesTerritories-Table.aspx?" imageUrl="" roles="3" order="11">
+        <siteMapNode title="{Menu:Show} Sales Territories" description="{Menu:Show} Sales Territories" url="~/SalesTerritories/Show-SalesTerritories-Table.aspx" imageUrl="" roles="" order="1" />
+        <siteMapNode title="Edit Sales-Facilities" description="Edit Sales-Facilities" url="~/Customers/Edit-Customers-Sales-Table.aspx" imageUrl="" roles="" order="2" />
+      </siteMapNode>
+      <siteMapNode title="Ticketing" description="" url="" imageUrl="" roles="3" order="12">
+        <siteMapNode title="Ticket Status" description="Ticket Status" url="~/resource_sch_status/Show-Resource-sch-status-Table.aspx?" imageUrl="" roles="" order="1">
+          <siteMapNode title="{Menu:Add} TicketStatus" description="{Menu:Add} TicketStatus" url="~/resource_sch_status/Add-Resource-sch-status.aspx" imageUrl="" roles="" order="1" />
+          <siteMapNode title="{Menu:Show} TicketStatus" description="{Menu:Show} TicketStatus" url="~/resource_sch_status/Show-Resource-sch-status-Table.aspx" imageUrl="" roles="" order="2" />
+        </siteMapNode>
+        <siteMapNode title="Ticket Priority" description="Ticket Priority" url="~/resource_sch_priority/Show-Resource-sch-priority-Table.aspx?" imageUrl="" roles="" order="2">
+          <siteMapNode title="{Menu:Add} Ticket Priority" description="{Menu:Add} Ticket Priority" url="~/resource_sch_priority/Add-Resource-sch-priority.aspx" imageUrl="" roles="" order="1" />
+          <siteMapNode title="{Menu:Show} Ticket Priority" description="{Menu:Show} Ticket Priority" url="~/resource_sch_priority/Show-Resource-sch-priority-Table.aspx" imageUrl="" roles="" order="2" />
+        </siteMapNode>
+      </siteMapNode>
+      <siteMapNode title="Technicians" description="Technicians" url="~/Technicians/Show-Technicians-Table.aspx?" imageUrl="" roles="3" order="13" />
+      <siteMapNode title="Vendors" description="Vendors" url="~/Vendors/Show-Vendors-Table.aspx?" imageUrl="" roles="3" order="14" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

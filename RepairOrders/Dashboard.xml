@@ -1,0 +1,865 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ComponentDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.ironspeed.com/designer">
+  <Generator>Iron Speed Designer</Generator>
+  <Version>12.2.0</Version>
+  <Self>
+    <Name>Dashboard</Name>
+    <Type>Page</Type>
+    <SubType>DotNet</SubType>
+    <MasterLayout>../Master Pages/HorizontalMenu.master</MasterLayout>
+    <NewWindowMasterLayout>../Master Pages/Blank.master</NewWindowMasterLayout>
+    <PopupMasterLayout>../Master Pages/Popup.master</PopupMasterLayout>
+    <PopupCssClass>QPageSize</PopupCssClass>
+    <GenerateDirectory>RepairOrders</GenerateDirectory>
+    <Layout>RepairOrders\Dashboard.xml</Layout>
+    <DisplayName>Dashboard</DisplayName>
+    <Description>This is a blank page.</Description>
+    <LoginRequired>&lt;PRoles&gt;NOT_ANONYMOUS&lt;/PRoles&gt;</LoginRequired>
+    <CheckSum>-16036376-1293</CheckSum>
+  </Self>
+  <ComposedOf>
+    <ContainedComponent>
+      <Name>Label</Name>
+      <Type>Aspx</Type>
+      <ControlClass>System.Web.UI.WebControls.Label</ControlClass>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>PageTitle</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Text</Name>
+          <Value>OEM Medical Systems</Value>
+        </Attribute>
+      </PassthroughAttributes>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>Repairorder_historyCountChart</Name>
+      <Type>Aspx</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>BackgroundColor</Name>
+          <Value>White</Value>
+        </Attribute>
+        <Attribute>
+          <Name>BarWidth</Name>
+          <Value>16</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ChartHeight</Name>
+          <Value>500</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ChartType</Name>
+          <Value>Column</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ChartWidth</Name>
+          <Value>500</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Color</Name>
+          <Value>Blue</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CustomProperties</Name>
+          <Value />
+        </Attribute>
+        <Attribute>
+          <Name>DataSourceName</Name>
+          <Value>Repairorder_historyCountQuery1</Value>
+        </Attribute>
+        <Attribute>
+          <Name>FontColor</Name>
+          <Value>Black</Value>
+        </Attribute>
+        <Attribute>
+          <Name>FontType</Name>
+          <Value>Arial</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Formula:ApplyRemainderLabel</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Formula:ChartTitle</Name>
+          <Value>"Repairorder History" + "  x  " + "Facility Name"</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Formula:DataPointURL</Name>
+          <Value>"../repairorder_history/Show-Repairorder-history-Table.aspx?CustName=" + UrlEncode(CustName.ToString())</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Formula:IndexLabel</Name>
+          <Value>CustName</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Formula:IndexTitle</Name>
+          <Value>"Facility Name"</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Formula:LegendURL</Name>
+          <Value>"../repairorder_history/Show-Repairorder-history-Table.aspx?CustName=" + UrlEncode(CustName.ToString())</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Formula:RemainderLabel</Name>
+          <Value>Resource("Txt:RemainderLabel")</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Formula:ValueData</Name>
+          <Value>Repairorder_historyCount</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Formula:ValueTitle</Name>
+          <Value>"Repairorder History"</Value>
+        </Attribute>
+        <Attribute>
+          <Name>GeneratePercentage</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>GridColor</Name>
+          <Value>LightGray</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalLabelColor</Name>
+          <Value>White</Value>
+        </Attribute>
+        <Attribute>
+          <Name>LabelFormat</Name>
+          <Value>0</Value>
+        </Attribute>
+        <Attribute>
+          <Name>LargestFirst</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Palette</Name>
+          <Value>Bright</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ShowInsideBar</Name>
+          <Value>Value at bar end</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ShowTitle</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ShowXAxisTitle</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ShowYAxisTitle</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ToolTip</Name>
+          <Value>Repairorder History  x  Customer Name</Value>
+        </Attribute>
+        <Attribute>
+          <Name>UseDefaultColorScheme</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>UsePalette</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>XAxisLabelAngle</Name>
+          <Value>-50</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <ControlClass>System.Web.UI.DataVisualization.Charting.Chart</ControlClass>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>Repairorder_historyCountQuery</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseAYS_OEM%dbo.Customers</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseAYS_OEM%dbo.repairorder_history_</TableAlias>
+          <Field>[DatabaseAYS_OEM%dbo.repairorder_history_].[RODate]</Field>
+          <Operator>&gt;=</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>'1/1/2017'</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <WhereClause>
+          <Position>2</Position>
+          <TableAlias>DatabaseAYS_OEM%dbo.repairorder_history_</TableAlias>
+          <Field>[DatabaseAYS_OEM%dbo.repairorder_history_].[RODate]</Field>
+          <Operator>lessThanOrEqualTo</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>'12/31/2017'</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator>
+            <Position>1</Position>
+            <Operatr>AND</Operatr>
+          </Operator>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseAYS_OEM%dbo.repairorder_history_</AliasName>
+            <TableName>DatabaseAYS_OEM%dbo.repairorder_history</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>DataReaderSortBy</Name>
+          <Value>Repairorder_historyCount Desc</Value>
+        </Attribute>
+        <Attribute>
+          <Name>GenerateReminder</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+        <Attribute>
+          <Name>Top</Name>
+          <Value>10</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseAYS_OEM%dbo.Customers</Table>
+          <Field>CustName</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseAYS_OEM%dbo.repairorder_history</Table>
+          <SelectAs>Repairorder_historyCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseAYS_OEM%dbo.repairorder_history</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseAYS_OEM%dbo.Customers</Table>
+              <Field>CustNo</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseAYS_OEM%dbo.repairorder_history</Table>
+              <Field>ROCustNo</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseAYS_OEM%dbo.repairorder_history</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys>
+        <OrderBy>
+          <Position>0</Position>
+          <ColumnName>Repairorder_historyCount</ColumnName>
+          <Direction>Desc</Direction>
+        </OrderBy>
+      </OrderBys>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>Repairorder_historyCountQuery1</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseAYS_OEM%dbo.Customers</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseAYS_OEM%dbo.repairorder_history_</TableAlias>
+          <Field>[DatabaseAYS_OEM%dbo.repairorder_history_].[RODate]</Field>
+          <Operator>&gt;=</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>'1/1/2017'</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseAYS_OEM%dbo.repairorder_history_</AliasName>
+            <TableName>DatabaseAYS_OEM%dbo.repairorder_history</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>DataReaderSortBy</Name>
+          <Value>Repairorder_historyCount Desc</Value>
+        </Attribute>
+        <Attribute>
+          <Name>GenerateReminder</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+        <Attribute>
+          <Name>Top</Name>
+          <Value>10</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseAYS_OEM%dbo.Customers</Table>
+          <Field>CustName</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseAYS_OEM%dbo.repairorder_history</Table>
+          <SelectAs>Repairorder_historyCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseAYS_OEM%dbo.repairorder_history</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseAYS_OEM%dbo.Customers</Table>
+              <Field>CustNo</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseAYS_OEM%dbo.repairorder_history</Table>
+              <Field>ROCustNo</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseAYS_OEM%dbo.repairorder_history</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys>
+        <OrderBy>
+          <Position>0</Position>
+          <ColumnName>Repairorder_historyCount</ColumnName>
+          <Direction>Desc</Direction>
+        </OrderBy>
+      </OrderBys>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>RepairOrdersCountQuery</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseAYS_OEM%dbo.Statuses</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseAYS_OEM%dbo.RepairOrders_</TableAlias>
+          <Field>[DatabaseAYS_OEM%dbo.RepairOrders_].[ROStatus]</Field>
+          <Operator>!=</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>20</Value>
+          </Operand>
+          <CompareDFKA>No</CompareDFKA>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <WhereClause>
+          <Position>2</Position>
+          <TableAlias>DatabaseAYS_OEM%dbo.RepairOrders_</TableAlias>
+          <Field>[DatabaseAYS_OEM%dbo.RepairOrders_].[ROStatus]</Field>
+          <Operator>!=</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>24</Value>
+          </Operand>
+          <CompareDFKA>No</CompareDFKA>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <WhereClause>
+          <Position>3</Position>
+          <TableAlias>DatabaseAYS_OEM%dbo.Statuses_</TableAlias>
+          <Field>[DatabaseAYS_OEM%dbo.Statuses_].[status_active]</Field>
+          <Operator>=</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>1</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator>
+            <Position>1</Position>
+            <Operatr>AND</Operatr>
+          </Operator>
+          <Operator>
+            <Position>2</Position>
+            <Operatr>AND</Operatr>
+          </Operator>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseAYS_OEM%dbo.RepairOrders_</AliasName>
+            <TableName>DatabaseAYS_OEM%dbo.RepairOrders</TableName>
+          </Alias>
+          <Alias>
+            <AliasName>DatabaseAYS_OEM%dbo.Statuses_</AliasName>
+            <TableName>DatabaseAYS_OEM%dbo.Statuses</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>DataReaderSortBy</Name>
+          <Value>RepairOrdersCount Desc</Value>
+        </Attribute>
+        <Attribute>
+          <Name>GenerateReminder</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+        <Attribute>
+          <Name>Top</Name>
+          <Value>15</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseAYS_OEM%dbo.Statuses</Table>
+          <Field>StaCustomCaption</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseAYS_OEM%dbo.RepairOrders</Table>
+          <SelectAs>RepairOrdersCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseAYS_OEM%dbo.RepairOrders</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseAYS_OEM%dbo.Statuses</Table>
+              <Field>StaNumber</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseAYS_OEM%dbo.RepairOrders</Table>
+              <Field>ROStatus</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseAYS_OEM%dbo.RepairOrders</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys>
+        <OrderBy>
+          <Position>0</Position>
+          <ColumnName>RepairOrdersCount</ColumnName>
+          <Direction>Desc</Direction>
+        </OrderBy>
+      </OrderBys>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>UpdatePanel1</Name>
+      <Type>UpdatePanel</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>SmoothPanelUpdate</Name>
+          <Value>True</Value>
+        </Attribute>
+      </PassthroughAttributes>
+    </ContainedComponent>
+  </ComposedOf>
+  <LayoutDefinition>&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;LayoutDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;Layout Name="Page" Type="RootLayout"&gt;
+    &lt;Prolog&gt;
+      &lt;Value&gt;&amp;lt;asp:Content id="PageSection" ContentPlaceHolderID="PageContent" Runat="server"&amp;gt;
+    &amp;lt;a id="StartOfPageContent"&amp;gt;&amp;lt;/a&amp;gt;
+    &amp;lt;div id="scrollRegion" class="scrollRegion"&amp;gt;              
+      &amp;lt;GEN:UPDATEPANEL NAME="UpdatePanel1"&amp;gt;
+                &lt;/Value&gt;
+    &lt;/Prolog&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:PANEL NAME="BlankPanelWithHeader"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog&gt;
+      &lt;Value&gt;
+      &amp;lt;/GEN:UPDATEPANEL&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;div id="detailPopup" class="detailRolloverPopup" onmouseout="detailRolloverPopupClose();" onmouseover="clearTimeout(gPopupTimer);"&amp;gt;&amp;lt;/div&amp;gt;
+                   &amp;lt;div class="QDialog" id="dialog" style="display:none;"&amp;gt;
+                          &amp;lt;iframe  id="QuickPopupIframe" style="width:100%;height:100%;border:none"&amp;gt;&amp;lt;/iframe&amp;gt;
+                   &amp;lt;/div&amp;gt;                  
+    &amp;lt;asp:ValidationSummary id="ValidationSummary1" ShowMessageBox="true" ShowSummary="false" runat="server"&amp;gt;&amp;lt;/asp:ValidationSummary&amp;gt;
+&amp;lt;/asp:Content&amp;gt;
+                &lt;/Value&gt;
+    &lt;/Epilog&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;class&lt;/Name&gt;
+        &lt;AttributeValue&gt;updatePanelContent&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="BlankPanelWithHeader" Type="BlankPanel"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;img src="../Images/space.gif" class="panelTLSpace" alt="" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelTL&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelT&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;img src="../Images/space.gif" class="panelTRSpace" alt="" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelTR&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelHeaderL&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                  &amp;lt;GEN:PANEL NAME="Header"/&amp;gt;
+                &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dh&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelHeaderR&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelL&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:PANEL NAME="Panel" /&amp;gt;&amp;lt;/asp:panel&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelR&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;img src="../Images/space.gif" class="panelBLSpace" alt="" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelBL&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelB&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;img src="../Images/space.gif" class="panelBRSpace" alt="" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelBR&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;class&lt;/Name&gt;
+        &lt;AttributeValue&gt;dv&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="Header" Type="BlankPanel"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;img src="../Images/space.gif" alt=""/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dhel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dheci&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;valign&lt;/Name&gt;
+            &lt;AttributeValue&gt;middle&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:PANEL NAME="TitleRegion"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dhb&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;img src="../Images/space.gif" alt=""/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dher&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;width&lt;/Name&gt;
+        &lt;AttributeValue&gt;100%&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="TitleRegion" Type="BlankPanel"&gt;
+    &lt;Prolog /&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="Panel" Type="BlankPanel"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:PANEL NAME="Fields"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tre&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;class&lt;/Name&gt;
+        &lt;AttributeValue&gt;dBody&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;width&lt;/Name&gt;
+        &lt;AttributeValue&gt;100%&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="Fields" Type="BlankPanel"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;span style="color:Navy;font-size:14pt"&amp;gt;&amp;lt;b&amp;gt;&amp;lt;asp:label id="Label" runat="server" text="Welcome to OEM Medical online repair order system"&amp;gt;&amp;lt;/asp:label&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/span&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;colspan&lt;/Name&gt;
+            &lt;AttributeValue&gt;2&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;asp:chart id="Repairorder_historyCountChart"  AlternateText ="Repairorder History  x  Customer Name" width="500" height="500" runat="server" enableviewstate="true"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;width&lt;/Name&gt;
+        &lt;AttributeValue&gt;100%&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+&lt;/LayoutDefinition&gt;]]&gt;</LayoutDefinition>
+</ComponentDefinition>

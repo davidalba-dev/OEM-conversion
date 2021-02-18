@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<XMLDefinition Generator="Iron Speed Designer" Version="12.2" Type="VIEW">
+  <ColumnDefinition>
+    <Column InternalName="0" Priority="1" ColumnNum="0">
+      <columnName>Expr1</columnName>
+      <columnUIName>%ISD_DEFAULT%</columnUIName>
+      <columnType>Number</columnType>
+      <columnDBType>int</columnDBType>
+      <columnLengthSet>10.0</columnLengthSet>
+      <columnDefault>
+      </columnDefault>
+      <columnDBDefault>
+      </columnDBDefault>
+      <columnIndex>N</columnIndex>
+      <columnUnique>N</columnUnique>
+      <columnFunction>notrim</columnFunction>
+      <columnDBFormat>
+      </columnDBFormat>
+      <columnPK>Y</columnPK>
+      <columnPermanent>N</columnPermanent>
+      <columnComputed>N</columnComputed>
+      <columnIdentity>N</columnIdentity>
+      <columnReadOnly>N</columnReadOnly>
+      <columnRequired>N</columnRequired>
+      <columnNotNull>N</columnNotNull>
+      <columnCaseSensitive>N</columnCaseSensitive>
+      <columnCollation>
+      </columnCollation>
+      <columnFullText>N</columnFullText>
+      <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
+      <columnTableAliasName>
+      </columnTableAliasName>
+      <applyLabelText>Y</applyLabelText>
+      <columnVirtualPK Source="User">Y</columnVirtualPK>
+    </Column>
+  </ColumnDefinition>
+  <TableName>vw_max_equip_import_batch_id</TableName>
+  <Version>
+  </Version>
+  <Owner>dbo</Owner>
+  <TableAliasName>vw_max_equip_import_batch_id_</TableAliasName>
+  <ConnectionName>DatabaseAYS_OEM</ConnectionName>
+  <PagingMethod>RowNum</PagingMethod>
+  <canCreateRecords Source="User">Y</canCreateRecords>
+  <canEditRecords Source="User">Y</canEditRecords>
+  <canDeleteRecords Source="User">Y</canDeleteRecords>
+  <canViewRecords Source="Database">Y</canViewRecords>
+  <AppShortName>OEMConversion</AppShortName>
+  <FolderName>vw_max_equip_import_batch_id</FolderName>
+  <MenuName>Maximum Equipment Import Batch</MenuName>
+  <QSPath>../vw_max_equip_import_batch_id/Vw-max-equip-import-batch-id-QuickSelector.aspx</QSPath>
+  <TableCodeName>Vw_max_equip_import_batch_id</TableCodeName>
+  <TableStoredProcPrefix>pOEMConversionVw_max_equip_import_batch_id</TableStoredProcPrefix>
+</XMLDefinition>

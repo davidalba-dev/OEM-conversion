@@ -1,0 +1,122 @@
+﻿<%@ Register Tagprefix="OEMConversion" TagName="ThemeButtonWithArrow" Src="../Shared/ThemeButtonWithArrow.ascx" %>
+
+<%@ Register Tagprefix="OEMConversion" Namespace="OEMConversion.UI.Controls.Show_Repairorder_history_Table" %>
+
+<%@ Register Tagprefix="OEMConversion" TagName="ThemeButton" Src="../Shared/ThemeButton.ascx" %>
+
+<%@ Register Tagprefix="Selectors" Namespace="OEMConversion" %>
+
+<%@ Page Language="C#" EnableEventValidation="false" AutoEventWireup="false" CodeFile="Show-Repairorder-history-Table.aspx.cs" Culture="en-US" MasterPageFile="../Master Pages/HorizontalMenu.master" Inherits="OEMConversion.UI.Show_Repairorder_history_Table" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Tagprefix="BaseClasses" Namespace="BaseClasses.Web.UI.WebControls" Assembly="BaseClasses" %>
+<%@ Register Tagprefix="OEMConversion" TagName="PaginationModern" Src="../Shared/PaginationModern.ascx" %>
+<asp:Content id="PageSection" ContentPlaceHolderID="PageContent" Runat="server">
+    <a id="StartOfPageContent"></a>
+    <div id="scrollRegion" class="scrollRegion">              
+      <asp:UpdateProgress runat="server" id="UpdatePanel1_UpdateProgress1" AssociatedUpdatePanelID="UpdatePanel1">
+			<ProgressTemplate>
+				<div class="ajaxUpdatePanel">
+				</div>
+				<div style="position:absolute; padding:30px;" class="updatingContainer">
+					<img src="../Images/updating.gif" alt="Updating" />
+				</div>
+			</ProgressTemplate>
+		</asp:UpdateProgress>
+		<asp:UpdatePanel runat="server" id="UpdatePanel1" UpdateMode="Conditional">
+			<ContentTemplate>
+
+                <table cellpadding="0" cellspacing="0" border="0" class="updatePanelContent"><tr><td>
+                        <OEMConversion:Repairorder_historyTableControl runat="server" id="Repairorder_historyTableControl">	<table class="dv" cellpadding="0" cellspacing="0" border="0"><tr><td class="panelTL"><img src="../Images/space.gif" class="panelTLSpace" alt="" /></td><td class="panelT"></td><td class="panelTR"><img src="../Images/space.gif" class="panelTRSpace" alt="" /></td></tr><tr><td class="panelHeaderL"></td><td class="dh">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="dhel"><img src="../Images/space.gif" alt="" /></td><td class="dhb"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="dht" valign="middle">
+                        <asp:Literal runat="server" id="Title" Text="&lt;%#String.Concat(&quot;Repairorder History&quot;) %>">	</asp:Literal>
+                      </td></tr></table>
+</td><td class="dhb"><table cellpadding="0" cellspacing="0" border="0" style="width: 100%;"><tr><td></td><td class="prbbc"></td><td class="prbbc"></td><td><div id="ActionsDiv" runat="server" class="popupWrapper">
+                <table border="0" cellpadding="0" cellspacing="0"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align: right;" class="tableCellValue"><input type="image" src="../Images/closeButton.gif" onmouseover="this.src='../Images/closeButtonOver.gif'" onmouseout="this.src='../Images/closeButton.gif'" alt="" onclick="ISD_HidePopupPanel();return false;" align="top" /><br /></td></tr><tr><td></td><td>
+                    <asp:ImageButton runat="server" id="NewButton" causesvalidation="False" commandname="Redirect" imageurl="../Images/ButtonBarNew.gif" onmouseout="this.src=&#39;../Images/ButtonBarNew.gif&#39;" onmouseover="this.src=&#39;../Images/ButtonBarNewOver.gif&#39;" redirectstyle="Popup" tooltip="&lt;%# GetResourceValue(&quot;Btn:Add&quot;, &quot;OEMConversion&quot;) %>">		
+	</asp:ImageButton>
+                  </td><td>
+                    <asp:ImageButton runat="server" id="PDFButton" causesvalidation="False" commandname="ReportData" imageurl="../Images/ButtonBarPDFExport.gif" onmouseout="this.src=&#39;../Images/ButtonBarPDFExport.gif&#39;" onmouseover="this.src=&#39;../Images/ButtonBarPDFExportOver.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Btn:PDF&quot;, &quot;OEMConversion&quot;) %>">		
+	</asp:ImageButton>
+                  </td><td>
+                    <asp:ImageButton runat="server" id="WordButton" causesvalidation="False" commandname="ExportToWord" imageurl="../Images/ButtonBarWordExport.gif" onmouseout="this.src=&#39;../Images/ButtonBarWordExport.gif&#39;" onmouseover="this.src=&#39;../Images/ButtonBarWordExportOver.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Btn:Word&quot;, &quot;OEMConversion&quot;) %>">		
+	</asp:ImageButton>
+                  </td><td>
+                    <asp:ImageButton runat="server" id="ExcelButton" causesvalidation="False" commandname="ExportDataExcel" imageurl="../Images/ButtonBarExcelExport.gif" onmouseout="this.src=&#39;../Images/ButtonBarExcelExport.gif&#39;" onmouseover="this.src=&#39;../Images/ButtonBarExcelExportOver.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Btn:ExportExcel&quot;, &quot;OEMConversion&quot;) %>">		
+	</asp:ImageButton>
+                  </td><td></td><td></td></tr></table>
+
+                </div></td><td class="prbbc"></td><td class="prspace"></td><td class="prbbc" style="text-align:right"><OEMConversion:ThemeButtonWithArrow runat="server" id="ActionsButton" button-causesvalidation="False" button-commandname="Custom" button-onclientclick="return ISD_ShowPopupPanel(&#39;ActionsDiv&#39;,&#39;ActionsButton&#39;,this);" button-text="&lt;%# GetResourceValue(&quot;Btn:Actions&quot;, &quot;OEMConversion&quot;) %>" button-tooltip="&lt;%# GetResourceValue(&quot;Btn:Actions&quot;, &quot;OEMConversion&quot;) %>"></OEMConversion:ThemeButtonWithArrow></td><td class="prbbc" style="text-align:right"></td><td class="prbbc"><img src="../Images/space.gif" alt="" style="width: 10px" /></td><td class="panelSearchBox"><table><tr><td><%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("SearchButton"))%>
+<i><span style="font-size:8pt">Search RO No </span></i>
+<asp:TextBox runat="server" id="SearchText" columns="50" cssclass="Search_Input">	</asp:TextBox>
+<asp:AutoCompleteExtender id="SearchTextAutoCompleteExtender" runat="server" TargetControlID="SearchText" ServiceMethod="GetAutoCompletionList_SearchText" MinimumPrefixLength="2" CompletionInterval="700" CompletionSetCount="10" CompletionListCssClass="autotypeahead_completionListElement" CompletionListItemCssClass="autotypeahead_listItem " CompletionListHighlightedItemCssClass="autotypeahead_highlightedListItem">
+</asp:AutoCompleteExtender>
+<%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("SearchButton"))%>
+</td><td>
+                <asp:ImageButton runat="server" id="SearchButton" causesvalidation="False" commandname="Search" imageurl="../Images/panelSearchButton.png" tooltip="&lt;%# GetResourceValue(&quot;Btn:SearchGoButtonText&quot;, &quot;OEMConversion&quot;) %>">		
+	</asp:ImageButton>
+              </td></tr></table>
+</td><td class="prspaceEnd">&nbsp;</td><td></td></tr></table>
+</td><td class="dher"><img src="../Images/space.gif" alt="" /></td><td class="dher"><img src="../Images/space.gif" alt="" /></td></tr></table>
+
+                </td><td class="panelHeaderR"></td></tr><tr><td class="panelL"></td><td>
+                  <asp:panel id="CollapsibleRegion" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td>
+                        <table cellpadding="0" cellspacing="0" border="0"><tr><td class="HistoryTableCellLabel"><asp:Literal runat="server" id="ROCustNoLabel" Text="Customer">	</asp:Literal></td><td class="popupTableCellValue"><asp:DropDownList runat="server" id="ROCustNoFilter" cssclass="Filter_Input" onkeypress="dropDownListTypeAhead(this,false)" redirecturl="" selectionmode="Single">	</asp:DropDownList> </td><td class="HistoryTableCellLabel"><asp:Literal runat="server" id="ROFaultCodesLabel" Text="EvaluateFormula(&quot;= \&quot;Fault Codes\&quot;&quot;, true)">	</asp:Literal> 
+<span class="rft"></span> </td><td class="popupTableCellValue"><asp:DropDownList runat="server" id="ROFaultCodesFilter" cssclass="Filter_Input" onkeypress="dropDownListTypeAhead(this,false)" redirecturl="" selectionmode="Single">	</asp:DropDownList> </td><td class="tableCellValue"><OEMConversion:ThemeButton runat="server" id="FilterButton" button-causesvalidation="False" button-commandname="Search" button-text="&lt;%# GetResourceValue(&quot;Btn:SearchGoButtonText&quot;, &quot;OEMConversion&quot;) %>" button-tooltip="&lt;%# GetResourceValue(&quot;Btn:SearchGoButtonText&quot;, &quot;OEMConversion&quot;) %>" postback="False"></OEMConversion:ThemeButton></td><td class="tableCellValue">
+                                  <asp:ImageButton runat="server" id="ResetButton" causesvalidation="False" commandname="ResetFilters" imageurl="../Images/ButtonBarReset.gif" onmouseout="this.src=&#39;../Images/ButtonBarReset.gif&#39;" onmouseover="this.src=&#39;../Images/ButtonBarResetOver.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Btn:Reset&quot;, &quot;OEMConversion&quot;) %>">		
+	</asp:ImageButton>
+                                </td></tr><tr><td class="HistoryTableCellLabel"><asp:Literal runat="server" id="corporate_nameLabel1" Text="EvaluateFormula(&quot;= \&quot;Healthcare Org.\&quot;&quot;, true)">	</asp:Literal></td><td class="popupTableCellValue"><asp:DropDownList runat="server" id="corporate_nameFilter" cssclass="Filter_Input" onkeypress="dropDownListTypeAhead(this,false)" redirecturl="" selectionmode="Single">	</asp:DropDownList> </td><td class="HistoryTableCellLabel"><asp:Literal runat="server" id="repair_replaceLabel" Text="Repair Replace">	</asp:Literal></td><td class="popupTableCellValue"><asp:DropDownList runat="server" id="repair_replaceFilter" cssclass="Filter_Input" onkeypress="dropDownListTypeAhead(this,false)">	</asp:DropDownList> </td><td class="tableCellValue"></td><td class="tableCellValue"></td></tr><tr><td class="HistoryTableCellLabel"><asp:Literal runat="server" id="RODeptIDNewLabel1" Text="EvaluateFormula(&quot;= \&quot;Department\&quot;&quot;, true)">	</asp:Literal></td><td class="popupTableCellValue"><asp:DropDownList runat="server" id="RODeptIDNewFilter" cssclass="Filter_Input" onkeypress="dropDownListTypeAhead(this,false)" redirecturl="" selectionmode="Single">	</asp:DropDownList> </td><td class="HistoryTableCellLabel"><asp:Literal runat="server" id="ROStatusLabel1" Text="EvaluateFormula(&quot;= \&quot;Status\&quot;&quot;, true)">	</asp:Literal></td><td class="popupTableCellValue"><asp:DropDownList runat="server" id="ROStatusFilter" cssclass="Filter_Input" onkeypress="dropDownListTypeAhead(this,false)" selectionmode="Multiple">	</asp:DropDownList> </td><td class="tableCellValue"></td><td class="tableCellValue"></td></tr><tr><td class="HistoryTableCellLabel"><asp:Literal runat="server" id="category_idLabel" Text="Category">	</asp:Literal></td><td class="popupTableCellValue"><asp:DropDownList runat="server" id="category_idFilter" cssclass="Filter_Input" onkeypress="dropDownListTypeAhead(this,false)" selectionmode="Multiple">	</asp:DropDownList> </td><td class="HistoryTableCellLabel"><asp:Literal runat="server" id="ROTechnicianLabel1" Text="EvaluateFormula(&quot;= \&quot;Technician\&quot;&quot;, true)">	</asp:Literal></td><td class="popupTableCellValue"><asp:DropDownList runat="server" id="ROTechnicianFilter" cssclass="Filter_Input" onkeypress="dropDownListTypeAhead(this,false)" selectionmode="Multiple">	</asp:DropDownList> </td><td class="tableCellValue"></td><td class="tableCellValue"></td></tr><tr><td class="HistoryTableCellLabel"><asp:Literal runat="server" id="RODateLabel1" Text="RO Date">	</asp:Literal></td><td class="popupTableCellValue"><asp:TextBox runat="server" id="RODateFromFilter" columns="15" cssclass="Filter_Input" onkeyup="DateFormat(this, this.value, event.keyCode, &#39;m/d/yyyy&#39;)" timestring="&quot;00:00:00&quot;" AutoPostback="False" style="vertical-align:middle">	</asp:TextBox>
+	<Selectors:CalendarExtendarClass runat="server" ID="RODateFromFilterCalenderExtender" TargetControlID="RODateFromFilter" CssClass="MyCalendar" Format="d">
+	</Selectors:CalendarExtendarClass> <span class="rft"><%# GetResourceValue("Txt:To", "OEMConversion") %></span> <asp:TextBox runat="server" id="RODateToFilter" columns="15" cssclass="Filter_Input" onkeyup="DateFormat(this, this.value, event.keyCode, &#39;m/d/yyyy&#39;)" timestring="&quot;23:59:59&quot;" AutoPostback="False" style="vertical-align:middle">	</asp:TextBox>
+	<Selectors:CalendarExtendarClass runat="server" ID="RODateToFilterCalenderExtender" TargetControlID="RODateToFilter" CssClass="MyCalendar" Format="d">
+	</Selectors:CalendarExtendarClass> </td><td class="HistoryTableCellLabel"><asp:Literal runat="server" id="ROSerialNoLabel1" Text="EvaluateFormula(&quot;= \&quot;Serial Number\&quot;&quot;, true)">	</asp:Literal></td><td class="popupTableCellValue"><asp:TextBox runat="server" id="ROSerialNoFilter" columns="20" cssclass="Filter_Input" onkeypress="dropDownListTypeAhead(this,false)" redirecturl="" selectionmode="Single">	</asp:TextBox> </td><td class="tableCellValue"></td><td class="tableCellValue"></td></tr><tr><td class="HistoryTableCellLabel"><asp:Literal runat="server" id="ROMakeLabel1" Text="EvaluateFormula(&quot;= \&quot;Make\&quot;&quot;, true)">	</asp:Literal></td><td class="popupTableCellValue"><asp:DropDownList runat="server" id="ROMakeFilter" cssclass="Filter_Input" onkeypress="dropDownListTypeAhead(this,false)" redirecturl="" selectionmode="Single">	</asp:DropDownList> </td><td class="HistoryTableCellLabel"><asp:Literal runat="server" id="RONoLabel1" Text="RO Number">	</asp:Literal></td><td class="popupTableCellValue"><asp:TextBox runat="server" id="RONoFromFilter" columns="15" cssclass="Filter_Input">	</asp:TextBox> <span class="rft"></span> </td><td class="tableCellValue"></td><td class="tableCellValue"></td></tr><tr><td class="HistoryTableCellLabel"><asp:Literal runat="server" id="ROModelLabel1" Text="EvaluateFormula(&quot;= \&quot;Model\&quot;&quot;, true)">	</asp:Literal></td><td class="popupTableCellValue"><asp:DropDownList runat="server" id="ROModelFilter" cssclass="Filter_Input" onkeypress="dropDownListTypeAhead(this,false)" redirecturl="" selectionmode="Single">	</asp:DropDownList> </td><td class="HistoryTableCellLabel"><asp:Literal runat="server" id="RODateRepairCompletedLabel" Text="EvaluateFormula(&quot;= \&quot;Date Repair Completed\&quot;&quot;, true)">	</asp:Literal></td><td class="popupTableCellValue"><asp:TextBox runat="server" id="RODateRepairCompletedFromFilter" columns="15" cssclass="Filter_Input" onkeyup="DateFormat(this, this.value, event.keyCode, &#39;m/d/yyyy&#39;)" timestring="&quot;00:00:00&quot;" AutoPostback="False" style="vertical-align:middle">	</asp:TextBox>
+	<Selectors:CalendarExtendarClass runat="server" ID="RODateRepairCompletedFromFilterCalenderExtender" TargetControlID="RODateRepairCompletedFromFilter" CssClass="MyCalendar" Format="d">
+	</Selectors:CalendarExtendarClass> <span class="rft"><%# GetResourceValue("Txt:To", "OEMConversion") %></span> <asp:TextBox runat="server" id="RODateRepairCompletedToFilter" columns="15" cssclass="Filter_Input" onkeyup="DateFormat(this, this.value, event.keyCode, &#39;m/d/yyyy&#39;)" timestring="&quot;23:59:59&quot;" AutoPostback="False" style="vertical-align:middle">	</asp:TextBox>
+	<Selectors:CalendarExtendarClass runat="server" ID="RODateRepairCompletedToFilterCalenderExtender" TargetControlID="RODateRepairCompletedToFilter" CssClass="MyCalendar" Format="d">
+	</Selectors:CalendarExtendarClass> </td><td class="tableCellValue"></td><td class="tableCellValue"></td></tr><tr><td class="HistoryTableCellLabel"></td><td class="popupTableCellValue"></td><td class="HistoryTableCellLabel"><asp:Literal runat="server" id="ROReference1Label1" Text="EvaluateFormula(&quot;= \&quot;PO#\&quot;&quot;, true)">	</asp:Literal></td><td class="popupTableCellValue"><asp:TextBox runat="server" id="ROReference1Filter" columns="20" cssclass="Filter_Input" onkeypress="dropDownListTypeAhead(this,false)" redirecturl="" selectionmode="Single">	</asp:TextBox> </td><td class="tableCellValue"></td><td class="tableCellValue"></td></tr></table>
+
+                        </td></tr><tr><td class="panelPaginationC">
+                    <OEMConversion:PaginationModern runat="server" id="Pagination"></OEMConversion:PaginationModern>
+                    <!--To change the position of the pagination control, please search for "prspace" on the Online Help for instruction. -->
+                  </td></tr><tr><td class="tre"><table id="Repairorder_historyTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)" class="TFtable"><tr class="tch"><th class="thc"></th><th class="thc"><asp:LinkButton runat="server" id="RONoLabel" tooltip="Sort by RONo" Text="RO Number" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="ROStatusLabel" tooltip="Sort by ROStatus" Text="EvaluateFormula(&quot;= \&quot;Status\&quot;&quot;, true)" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="RODateLabel" tooltip="Sort by RODate" Text="RO Date" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="ROReference1Label" tooltip="Sort by ROReference1" Text="PO #" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="ROReference2Label" tooltip="Sort by ROReference2" Text="Dept." CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="ROReference4Label" tooltip="Sort by ROReference4" Text="Approved By" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="ROCustNameLabel" tooltip="Sort by ROCustName" Text="Customer" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="ROMakeLabel" tooltip="Sort by ROMake" Text="EvaluateFormula(&quot;= \&quot;Make\&quot;&quot;, true)" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="ROModelLabel" tooltip="Sort by ROModel" Text="EvaluateFormula(&quot;= \&quot;Model\&quot;&quot;, true)" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="ROCategoryLabel" tooltip="Sort by ROCategory" Text="EvaluateFormula(&quot;= \&quot;Category\&quot;&quot;, true)" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="ROGrandTotalLabel" tooltip="Sort by ROGrandTotal" Text="Total" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="ROSerialNoLabel" tooltip="Sort by ROSerialNo" Text="EvaluateFormula(&quot;= \&quot;Serial Number\&quot;&quot;, true)" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="ROTechnicianLabel" tooltip="Sort by ROTechnician" Text="EvaluateFormula(&quot;= \&quot;Technician\&quot;&quot;, true)" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="ROFaultCodesLabel1" tooltip="Sort by ROFaultCodes" Text="EvaluateFormula(&quot;= \&quot;Fault Codes\&quot;&quot;, true)" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="RODateRepairCompletedLabel1" tooltip="Sort by RODateRepairCompleted" Text="Rpr Comp." CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="corporate_nameLabel" tooltip="Sort by corporate_name" Text="EvaluateFormula(&quot;= \&quot;Healthcare Org.\&quot;&quot;, true)" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="RODateEstimateApprovedLabel" tooltip="Sort by RODateEstimateApproved" visible="False" Text="EvaluateFormula(&quot;= \&quot;Date Est. Approved\&quot;&quot;, true)" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="RODateReturnedLabel" tooltip="Sort by RODateReturned" visible="False" Text="EvaluateFormula(&quot;= \&quot;Date Returned\&quot;&quot;, true)" CausesValidation="False">	</asp:LinkButton></th><th class="thc"></th></tr><asp:Repeater runat="server" id="Repairorder_historyTableControlRepeater">		<ITEMTEMPLATE>		<OEMConversion:Repairorder_historyTableControlRow runat="server" id="Repairorder_historyTableControlRow">
+<tr><td class="tableCellValue"><asp:ImageButton runat="server" id="EditRowButton" causesvalidation="False" commandname="Redirect" cssclass="button_link" imageurl="../Images/icon_edit.gif" onmouseout="this.src=&#39;../Images/icon_edit.gif&#39;" onmouseover="this.src=&#39;../Images/icon_edit_over.gif&#39;" requiredroles="&lt;PRoles>1;3&lt;/PRoles>" tooltip="&lt;%# GetResourceValue(&quot;Txt:EditRecord&quot;, &quot;OEMConversion&quot;) %>">		
+	</asp:ImageButton> 
+<asp:ImageButton runat="server" id="ViewRowButton" causesvalidation="False" commandname="Redirect" cssclass="button_link" imageurl="../Images/icon_view.gif" onmouseout="this.src=&#39;../Images/icon_view.gif&#39;" onmouseover="this.src=&#39;../Images/icon_view_over.gif&#39;" requiredroles="&lt;PRoles>2;4;6&lt;/PRoles>" tooltip="&lt;%# GetResourceValue(&quot;Txt:ViewRecord&quot;, &quot;OEMConversion&quot;) %>">		
+	</asp:ImageButton></td><td class="tableCellValue"><asp:Literal runat="server" id="RONo"></asp:Literal></td><td class="tableCellValue"><asp:Literal runat="server" id="ROStatus"></asp:Literal></td><td class="tableCellValue"><span style="white-space:nowrap;">
+<asp:Literal runat="server" id="RODate"></asp:Literal></span>
+</td><td class="tableCellValue"><asp:Literal runat="server" id="ROReference1"></asp:Literal></td><td class="tableCellValue"><span style="white-space:nowrap;">
+<asp:Literal runat="server" id="RODeptIDNew"></asp:Literal></span>
+</td><td class="tableCellValue"><asp:Literal runat="server" id="ROReference4"></asp:Literal></td><td class="tableCellValue"><span style="white-space:nowrap;">
+<asp:Literal runat="server" id="ROCustNo3"></asp:Literal></span>
+</td><td class="tableCellValue"><asp:Literal runat="server" id="ROMake"></asp:Literal></td><td class="tableCellValue"><asp:Literal runat="server" id="ROModel"></asp:Literal></td><td class="tableCellValue"><span style="white-space:nowrap;">
+<asp:Literal runat="server" id="category_id"></asp:Literal></span>
+</td><td class="tableCellValue"><span style="white-space:nowrap;">
+<asp:Literal runat="server" id="ro_subtotal"></asp:Literal></span>
+</td><td class="tableCellValue"><asp:Literal runat="server" id="ROSerialNo"></asp:Literal></td><td class="tableCellValue"><asp:Literal runat="server" id="ROTechnician"></asp:Literal></td><td class="tableCellValue"><asp:Literal runat="server" id="ROFaultCodes"></asp:Literal></td><td class="tableCellValue"><span style="white-space:nowrap;">
+<asp:Literal runat="server" id="RODateRepairCompleted"></asp:Literal></span>
+</td><td class="tableCellValue"><asp:Literal runat="server" id="corporate_name"></asp:Literal></td><td class="tableCellValue"><span style="white-space:nowrap;">
+<asp:Literal runat="server" id="RODateEstimateApproved" visible="False"></asp:Literal></span>
+</td><td class="tableCellValue"><span style="white-space:nowrap;">
+<asp:Literal runat="server" id="RODateReturned" visible="False"></asp:Literal></span>
+</td><td class="tableCellValue"><asp:Literal runat="server" id="approver_email" visible="False"></asp:Literal></td></tr></OEMConversion:Repairorder_historyTableControlRow>
+</ITEMTEMPLATE>
+
+</asp:Repeater>
+</table>
+</td></tr></table>
+</asp:panel>
+                </td><td class="panelR"></td></tr></table>
+	<asp:hiddenfield id="Repairorder_historyTableControl_PostbackTracker" runat="server" />
+</OEMConversion:Repairorder_historyTableControl>
+
+            </td></tr></table>
+      </ContentTemplate>
+</asp:UpdatePanel>
+
+    </div>
+    <div id="detailPopup" class="detailRolloverPopup" onmouseout="detailRolloverPopupClose();" onmouseover="clearTimeout(gPopupTimer);"></div>
+                   <div class="QDialog" id="dialog" style="display:none;">
+                          <iframe id="QuickPopupIframe" style="width:100%;height:100%;border:none"></iframe>
+                   </div>                  
+    <asp:ValidationSummary id="ValidationSummary1" ShowMessageBox="true" ShowSummary="false" runat="server"></asp:ValidationSummary>
+</asp:Content>
+                

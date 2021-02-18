@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "project", ".", "{5F06B103-1261-47B7-B092-5A2575F1B837}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/OEMConversion"
+		Debug.AspNetCompiler.PhysicalPath = "..\project\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\OEMConversion\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/OEMConversion"
+		Release.AspNetCompiler.PhysicalPath = "..\project\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\OEMConversion\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "2067"
+		SlnRelativePath = "..\project\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F06B103-1261-47B7-B092-5A2575F1B837}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{5F06B103-1261-47B7-B092-5A2575F1B837}.Debug|.NET.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CF06D60-DC89-410D-AB40-79810AFE8401}
+	EndGlobalSection
+EndGlobal
